@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import Nav from "./Nav";
-//mport Routes from "./Routes";
 import { Redirect, BrowserRouter, Switch, Route } from 'react-router-dom';
 import DogList from "./DogList";
 import DogDetails from "./DogDetails";
@@ -59,15 +57,14 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          {/* <Nav /> */}
           <Switch>
             <Route exact path="/dogs"
               render={() => <DogList dogData={this.props.dogs} />}
             />
-            <Route path="/dogs/:name"
+            <Route exact path="/dogs/:name"
               render={routeProps => <DogDetails {...routeProps} dogData={this.props.dogs} />}
             />
-            <Redirect to="/dogs" />
+            <Redirect to="/dogs"/>
           </Switch>
         </BrowserRouter>
       </div>

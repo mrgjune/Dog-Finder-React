@@ -18,9 +18,11 @@ class DogList extends React.Component {
                     alt='dog' />
             </div> </Link>);
         return (
+            <body style={{ height: "100vw", width: "100vw", background: "crimson" }}>
             <div>
                 {dogs}
             </div>
+            </body>
         )
     }
 }
